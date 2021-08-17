@@ -1,0 +1,91 @@
+
+html {
+  background-color: antiquewhite;
+}
+.ChangeEmbed {
+  font-family: monospace;
+}
+.ChangeEmbed h4 {
+  font-size: 24px;
+}
+
+.ChangeEmbed form {
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+}
+
+.ChangeEmbed form input[type='button'] {
+  margin-right: 8px;
+}
+
+.ChangeEmbed form input[type='button']:last-child {
+  margin-right: 0;
+}
+
+.ChangeEmbed form input[type='submit'],
+.ChangeEmbed form input[type='button'] {
+  background-color: #623bea;
+  color: #fff;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px #00000085;
+  border: none;
+  font-family: monospace;
+}
+
+.ChangeEmbed form input[type='submit']:hover,
+.ChangeEmbed form input[type='button']:hover {
+  border-color: #3bc8d1;
+  color: #3bc8d1;
+  cursor: pointer;
+}
+
+.ChangeEmbed form input[type='submit']:active,
+.ChangeEmbed form input[type='button']:active {
+  background-color: transparent;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 12px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.input input {
+  background: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: inherit;
+  padding: 10px 7px;
+  transition: all 0.2s ease;
+  border: 1px solid #d4d4d4;
+  font-family: monospace;
+}
+
+.input input:focus {
+  border-color: #3bc8d1;
+  outline: none;
+}
+
+.input input:disabled {
+  background-color: #ccc;
+  border: none;
+}
+
+textarea {
+  border-radius: 8px;
+}
