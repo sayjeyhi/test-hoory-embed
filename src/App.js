@@ -10,6 +10,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // eslint-disable-next-line no-new-func
     const devFunc = new Function(code)
 
     devFunc();
