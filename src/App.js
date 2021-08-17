@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './index.css';
 
 function App() {
-  const [code, setCode] = useState('!function (h,oo,r,y){h[r]=h[r]||{},h[r].workspace=y;const f=oo.getElementsByTagName(\'script\')[0],j=oo.createElement(\'script\');j.async=!0,j.src=\'https://api-dev.hb-web.hoory.com/embed.js?w=\'+y,f.parentNode.insertBefore(j, f),j.onload=function(){h[r].open()}}(window,document,\'hoory\',\'ADD_WORKSPACE_SLUG\');');
+  const [code, setCode] = useState('!function (h,oo,r,y){h[r]=h[r]||{},h[r].workspace=y;const f=oo.getElementsByTagName(\'script\')[0],j=oo.createElement(\'script\');j.async=!0,j.src=\'https://api-dev.hb-web.hoory.cloud/embed.js?w=\'+y,f.parentNode.insertBefore(j, f),j.onload=function(){h[r].open()}}(window,document,\'hoory\',\'ADD_WORKSPACE_SLUG\');');
 
   const handleCodeChange = (e) => {
     setCode(e.target.value.replace('<script>', '').replace('</script>').replace('<!-- Hoory -->', ''));
