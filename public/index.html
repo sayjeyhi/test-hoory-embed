@@ -1,43 +1,250 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test Widget</title>
+</head>
+<body>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<style>
+  html {
+    background-color: antiquewhite;
+  }
+  .ChangeEmbed {
+    font-family: monospace;
+  }
+  .ChangeEmbed h4 {
+    font-size: 24px;
+  }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  .ChangeEmbed form {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+  }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  .ChangeEmbed form input[type='button'] {
+    margin-right: 8px;
+  }
+
+  .ChangeEmbed form input[type='button']:last-child {
+    margin-right: 0;
+  }
+
+  .ChangeEmbed form input[type='submit'],
+  .ChangeEmbed form input[type='button'] {
+    background-color: #623bea;
+    color: #fff;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px #00000085;
+    border: none;
+    font-family: monospace;
+  }
+
+  .ChangeEmbed form input[type='submit']:hover,
+  .ChangeEmbed form input[type='button']:hover {
+    border-color: #3bc8d1;
+    color: #3bc8d1;
+    cursor: pointer;
+  }
+
+  .ChangeEmbed form input[type='submit']:active,
+  .ChangeEmbed form input[type='button']:active {
+    background-color: transparent;
+  }
+
+  .input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 12px;
+    font-family: monospace;
+    font-size: 14px;
+  }
+
+  .input input {
+    background: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: inherit;
+    padding: 10px 7px;
+    transition: all 0.2s ease;
+    border: 1px solid #d4d4d4;
+    font-family: monospace;
+  }
+
+  .input input:focus {
+    border-color: #3bc8d1;
+    outline: none;
+  }
+
+  .input input:disabled {
+    background-color: #ccc;
+    border: none;
+  }
+</style>
+
+<div class="ChangeEmbed">
+  <form id="changeConfigForm">
+    <div class="input">
+      <label for="visitorId">Visitor ID</label>
+      <input
+              type="text"
+              id="visitorId"
+              style="width: 186px"
+              disabled
+      />
+    </div>
+    <div class="input">
+      <label for="workspace">Workspace</label>
+      <input
+              type="text"
+              id="workspace"
+              placeholder="MyWorkspace"
+              style="width: 262px"
+      />
+    </div>
+    <div class="input">
+      <label for="firstName">First Name</label>
+      <input
+              type="text"
+              id="firstName"
+              placeholder="George"
+              style="width: 262px"
+      />
+    </div>
+    <div class="input">
+      <label for="lastName">Last Name</label>
+      <input
+              type="text"
+              id="lastName"
+              placeholder="Carlin"
+              style="width: 262px"
+      />
+    </div>
+    <div class="input">
+      <label for="email">Email</label>
+      <input
+              type="text"
+              id="email"
+              placeholder="george@example.com"
+              style="width: 262px"
+      />
+    </div>
+    <div class="input">
+      <label for="image">Image</label>
+      <input
+              type="text"
+              id="image"
+              placeholder="https://via.placeholder.com/100.png"
+              style="width: 262px"
+      />
+    </div>
+    <input type="submit" value="Refresh embed code"/>
+
+    <hr />
+    <div style="margin-top: 24px">
+      <h4>API methods</h4>
+      <input
+              type="button"
+              value="Init"
+      />
+      <input
+              type="button"
+              value="Open"
+      />
+      <input
+              type="button"
+              value="Close"
+
+      />
+      <input
+              type="button"
+              value="Show"
+      />
+      <input
+              type="button"
+              value="Hide"
+      />
+    </div>
+    <hr />
+    <div style="margin-top: 24px">
+      <h4>Events</h4>
+      <input
+              type="button"
+              value="onInit"
+      />
+      <input
+              type="button"
+              value="onOpen"
+      />
+      <input
+              type="button"
+              value="onClose"
+      />
+      <input
+              type="button"
+              value="onShow"
+      />
+      <input
+              type="button"
+              value="onHide"
+      />
+    </div>
+  </form>
+</div>
+
+<div id="root"></div>
+<script>
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries());
+  window.hoory = {
+    workspace: params.workspace || "test",
+    firstName: params.firstName || "George", // Replace this with your user's first name
+    lastName: params.lastName || "Carlin", // Replace this with your user's last name
+    email: params.email || "george@example.com", // Replace this with your user's email address
+    image: params.image || "https://via.placeholder.com/100.png" // Replace this with your user's image url
+  };
+
+  function readValue(id) {
+    const temp = document.getElementById(id).value;
+    return temp ? `${id}=${temp}&` : '';
+  }
+  function setValue(id, value) {
+    return document.getElementById(id).value = value;
+  }
+
+  document.getElementById('changeConfigForm').onsubmit = (e) => {
+    e.preventDefault();
+    window.location.href = `test.html?${readValue('workspace')}${readValue('firstName')}${readValue('lastName')}${readValue('email')}${readValue('image')}`
+  };
+
+  const visitorId = localStorage.getItem('visitorId') || '';
+  setValue('visitorId', visitorId);
+  setValue('workspace', params.workspace || '');
+  setValue('firstName', params.firstName || '');
+  setValue('lastName', params.lastName || '');
+  setValue('email', params.email || '');
+  setValue('image', params.image || '');
+</script>
+
+<!-- Hoory -->
+<script>!function (h,oo,r,y){h[r]=h[r]||{},h[r].workspace=y;const f=oo.getElementsByTagName('script')[0],j=oo.createElement('script');j.async=!0,j.src='https://api-dev.hb-web.hoory.com/embed.js?w='+y,f.parentNode.insertBefore(j, f),j.onload=function(){h[r].open()}}(window,document,'hoory',window.hoory.workspace);</script>
+<!-- Hoory -->
+
+</body>
 </html>
