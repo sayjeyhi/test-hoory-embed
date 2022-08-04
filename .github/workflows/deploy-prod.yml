@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       slug:
-        description: branch
+        description: slug
         required: true
 jobs:
   build-and-deploy:
@@ -22,9 +22,7 @@ jobs:
 
       - name: Change to prod 🧩
         run: |
-          sed -i -e 's/api-dev.hb-web/api-hb-web.hoory.com/g' ./build/index.html
           sed -i -e "s/opppp2/$SLUG/g" ./build/index.html
-          sed -i -e "s/ht/ht-prod/g" ./CNAME
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
